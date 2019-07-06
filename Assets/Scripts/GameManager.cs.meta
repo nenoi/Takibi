@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 6b0e6ba69518c594ca3748b6adaca767
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - soulPrefab: {instanceID: 0}
+  - canvasGame: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
