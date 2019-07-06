@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
 
     private DateTime lastDateTime; // 前回、魂を生成した時間
 
-    private int[] nextScoreTable = new int[] { 10, 100, 500, 99999 }; // レベルアップ値
+    private int[] nextScoreTable = new int[] { 10, 100, 200, 99999 }; // レベルアップ値
 
     private bool clearFlag = false; // クリアフラグ
 
@@ -94,13 +94,13 @@ public class GameManager : MonoBehaviour {
                 soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.BLUE);
                 break;
             case 1:
-                soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.RED);
+                soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.GREEN);
                 break;
             case 2:
-                soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.RED);
+                soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.YELLOW);
                 break;
             case 3:
-                soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.RED);
+                soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.YELLOW);
                 break;
         }
     }
