@@ -156,7 +156,10 @@ public class GameManager : MonoBehaviour {
             if (mononokeLevel == MAX_LEVEL) {
                 if (clearFlag == false) {
                     clearFlag = true;
-                    ClearEffect();
+                    // スコアUIを非表示にする
+                    scoreBG.SetActive(false);
+                    textScore.SetActive(false);
+                    //ClearEffect();
                 }
             }
 
@@ -192,7 +195,7 @@ public class GameManager : MonoBehaviour {
     }
 
     // モノノケが全員集まった時の演出
-    private void ClearEffect() {
+    public void ClearEffect() {
         GameObject textClear = Instantiate(textClearPrefab);
         textClear.transform.SetParent(canvasGame.transform, false);
 
@@ -200,8 +203,11 @@ public class GameManager : MonoBehaviour {
 
         audioSource.PlayOneShot(clearSE);
 
-        // スコアUIを非表示にする
-        scoreBG.SetActive(false);
-        textScore.SetActive(false);
+        //// スコアUIを非表示にする
+        //scoreBG.SetActive(false);
+        //textScore.SetActive(false);
+
+        // Twitterに投稿機能を呼ぶ
+        StartCoroutine(TweetWithScreenShot.TweetManager.TweetWithScreenShot("モノノケ全員集合！ @tendonjpn https://unityroom.com/games/takibi_mononoke"));
     }
 }
