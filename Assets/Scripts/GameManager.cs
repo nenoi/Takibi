@@ -58,14 +58,16 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
-        // RESPAWN_TIME に設定した時間が経過するごとに、魂を生成する
-        if (currentSoul < MAX_SOUL) {
-            TimeSpan timeSpan = DateTime.UtcNow - lastDateTime;
+        if (mononokeLevel < MAX_LEVEL) {
+            // RESPAWN_TIME に設定した時間が経過するごとに、魂を生成する
+            if (currentSoul < MAX_SOUL) {
+                TimeSpan timeSpan = DateTime.UtcNow - lastDateTime;
 
-            if (timeSpan >= TimeSpan.FromSeconds(RESPAWN_TIME)) {
-                while (timeSpan >= TimeSpan.FromSeconds(RESPAWN_TIME)) {
-                    CreateNewSoul();
-                    timeSpan -= TimeSpan.FromSeconds(RESPAWN_TIME);
+                if (timeSpan >= TimeSpan.FromSeconds(RESPAWN_TIME)) {
+                    while (timeSpan >= TimeSpan.FromSeconds(RESPAWN_TIME)) {
+                        CreateNewSoul();
+                        timeSpan -= TimeSpan.FromSeconds(RESPAWN_TIME);
+                    }
                 }
             }
         }
