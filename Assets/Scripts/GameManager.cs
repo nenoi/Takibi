@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour {
     // スコアテキスト更新
     void RefreshScoreText() {
         textScore.GetComponent<Text>().text =
-            "魂  " + score + " / " + nextScore;
+            score + " / " + nextScore;
     }
 
     // モノノケレベル管理
