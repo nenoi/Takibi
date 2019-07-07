@@ -678,7 +678,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0e6ba69518c594ca3748b6adaca767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulPrefab: {fileID: 7310199243724277861, guid: 5a5decb80859d5f43ad63ad003417575,
+  soulBluePrefab: {fileID: 3924479343240213130, guid: 3bec9fec310457a4ea0f77a90efa4ae9,
+    type: 3}
+  soulGreenPrefab: {fileID: 2456743317828585740, guid: 15d7a4ee96cf01946bd96d61781c0f77,
+    type: 3}
+  soulYellowPrefab: {fileID: 995857837735824872, guid: eda9b5dd247d62f408b35950b77381fd,
     type: 3}
   textClearPrefab: {fileID: 8594729799951505410, guid: 8b4047c15602b7c4ea520e3888250ce0,
     type: 3}
@@ -686,6 +690,7 @@ MonoBehaviour:
   textScore: {fileID: 1817320351}
   mononokeManager: {fileID: 224290360}
   kaeru: {fileID: 744313024}
+  scoreBG: {fileID: 2045931986}
   getScoreSE: {fileID: 8300000, guid: c2cb96d63c0f2b64480e9d736d8843f2, type: 3}
   levelUpSE: {fileID: 8300000, guid: e4494c3fbf122d94a959f46c3163d839, type: 3}
   clearSE: {fileID: 8300000, guid: 5065ea5422efc7f4ab1480686aff0c30, type: 3}

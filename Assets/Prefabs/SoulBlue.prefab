@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7310199243724277861
+--- !u!1 &3924479343240213130
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,28 +8,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7310199243724277862}
-  - component: {fileID: 7310199243724277880}
-  - component: {fileID: 7310199243724277863}
-  - component: {fileID: 4151991623581952043}
-  - component: {fileID: 9149269893516535397}
-  - component: {fileID: 745422046412950198}
-  - component: {fileID: 3177807703465878618}
-  - component: {fileID: 4253808197212990651}
+  - component: {fileID: 3924479343240213129}
+  - component: {fileID: 3924479343240213143}
+  - component: {fileID: 3924479343240213128}
+  - component: {fileID: 7681821766973182660}
+  - component: {fileID: 3313868870536240266}
+  - component: {fileID: 6439517681145311321}
+  - component: {fileID: 9159284894279818933}
+  - component: {fileID: 7497673508167964244}
   m_Layer: 5
-  m_Name: Soul
+  m_Name: SoulBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7310199243724277862
+--- !u!224 &3924479343240213129
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310199243724277861}
+  m_GameObject: {fileID: 3924479343240213130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -42,21 +42,21 @@ RectTransform:
   m_AnchoredPosition: {x: -232, y: -398}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7310199243724277880
+--- !u!222 &3924479343240213143
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310199243724277861}
+  m_GameObject: {fileID: 3924479343240213130}
   m_CullTransparentMesh: 0
---- !u!114 &7310199243724277863
+--- !u!114 &3924479343240213128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310199243724277861}
+  m_GameObject: {fileID: 3924479343240213130}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -79,14 +79,14 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!50 &4151991623581952043
+--- !u!50 &7681821766973182660
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310199243724277861}
+  m_GameObject: {fileID: 3924479343240213130}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -100,13 +100,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &9149269893516535397
+--- !u!58 &3313868870536240266
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310199243724277861}
+  m_GameObject: {fileID: 3924479343240213130}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -116,13 +116,13 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 68.1
---- !u!114 &745422046412950198
+--- !u!114 &6439517681145311321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310199243724277861}
+  m_GameObject: {fileID: 3924479343240213130}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe6fe110694bb1d4088dfb20ae9b797e, type: 3}
@@ -132,13 +132,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3d66ecd80cc17b643abb84439086c461, type: 3}
   - {fileID: 21300000, guid: 7a3157d5409d951409c3a9ced909eb85, type: 3}
   - {fileID: 21300000, guid: c9d600bd9d374564b886c549d1d55a2d, type: 3}
---- !u!114 &3177807703465878618
+--- !u!114 &9159284894279818933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310199243724277861}
+  m_GameObject: {fileID: 3924479343240213130}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -149,7 +149,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 745422046412950198}
+        - m_Target: {fileID: 6439517681145311321}
           m_MethodName: TouchSoul
           m_Mode: 1
           m_Arguments:
@@ -166,7 +166,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 745422046412950198}
+        - m_Target: {fileID: 6439517681145311321}
           m_MethodName: TouchSoul
           m_Mode: 1
           m_Arguments:
@@ -179,14 +179,14 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!95 &4253808197212990651
+--- !u!95 &7497673508167964244
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310199243724277861}
+  m_GameObject: {fileID: 3924479343240213130}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c5555eb93e988044191dbe49042f62ea, type: 2}

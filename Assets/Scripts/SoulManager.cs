@@ -82,16 +82,16 @@ public class SoulManager : MonoBehaviour {
     public void SetKind(SOUL_KIND kind) {
         soulKind = kind;
 
-        switch(soulKind) {
-            case SOUL_KIND.BLUE:
-                GetComponent<Image>().sprite = soulPicture[0];
-                break;
-            case SOUL_KIND.GREEN:
-                GetComponent<Image>().sprite = soulPicture[1];
-                break;
-            case SOUL_KIND.YELLOW:
-                GetComponent<Image>().sprite = soulPicture[2];
-                break;
-        }
+        //switch (soulKind) {
+        //    case SOUL_KIND.BLUE:
+        //        GetComponent<Image>().sprite = soulPicture[0];
+        //        break;
+        //    case SOUL_KIND.GREEN:
+        //        GetComponent<Image>().sprite = soulPicture[1];
+        //        break;
+        //    case SOUL_KIND.YELLOW:
+        //        GetComponent<Image>().sprite = soulPicture[2];
+        //        break;
+        //}
     }
 }

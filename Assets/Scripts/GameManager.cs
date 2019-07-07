@@ -7,16 +7,19 @@ using System;
 public class GameManager : MonoBehaviour {
     // 定数定義
     private const int MAX_SOUL = 10;    // 魂最大数
-    private const int RESPAWN_TIME = 1; // 魂が発生する秒数
+    private const int RESPAWN_TIME = 3; // 魂が発生する秒数
     private const int MAX_LEVEL = 3;    // 最大のモノノケレベル
 
     // オブジェクト参照
-    public GameObject soulPrefab; // 魂プレハブ
+    public GameObject soulBluePrefab; // 魂（青）プレハブ
+    public GameObject soulGreenPrefab; // 魂（緑）プレハブ
+    public GameObject soulYellowPrefab; // 魂（黄）プレハブ
     public GameObject textClearPrefab; // クリアテキストプレハブ
     public GameObject canvasGame; // ゲームキャンバス
     public GameObject textScore;  // スコアテキスト
     public GameObject mononokeManager; // モノノケマネージャー
     public GameObject kaeru; // カエル
+    public GameObject scoreBG; // スコア表示の背景UI
 
     public AudioClip getScoreSE; // 効果音：スコアゲット
     public AudioClip levelUpSE;  // 効果音：レベルアップ
@@ -32,7 +35,7 @@ public class GameManager : MonoBehaviour {
 
     private DateTime lastDateTime; // 前回、魂を生成した時間
 
-    private int[] nextScoreTable = new int[] { 10, 100, 200, 99999 }; // レベルアップ値
+    private int[] nextScoreTable = new int[] { 10, 50, 100, 99999 }; // レベルアップ値
 
     private bool clearFlag = false; // クリアフラグ
 
@@ -80,28 +83,44 @@ public class GameManager : MonoBehaviour {
 
     // 魂生成
     public void CreateSoul() {
-        GameObject soul = Instantiate(soulPrefab);
+        GameObject soul = SoulKindSelect();
+        //GameObject soul = Instantiate(SoulKindSelect());
         soul.transform.SetParent(canvasGame.transform, false);
         soul.transform.localPosition = new Vector3(
             UnityEngine.Random.Range(-300.0f, 300.0f),
             UnityEngine.Random.Range(-140.0f, -500.0f),
             0f);
 
+        // 魂出現アニメ再生
+        soul.GetComponent<Animator>().SetTrigger("isCreateSoul");
+    }
+
+    // 魂の種類を設定
+    public GameObject SoulKindSelect() {
+        GameObject soul;
         // 魂の種類を設定
         int kind = UnityEngine.Random.Range(0, mononokeLevel + 1);
-        switch(kind) {
+        switch (kind) {
             case 0:
+                soul = Instantiate(soulBluePrefab);
                 soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.BLUE);
-                break;
+                return soul;
             case 1:
+                soul = Instantiate(soulGreenPrefab);
                 soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.GREEN);
-                break;
+                return soul;
             case 2:
+                soul = Instantiate(soulYellowPrefab);
                 soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.YELLOW);
-                break;
+                return soul;
             case 3:
+                soul = Instantiate(soulYellowPrefab);
                 soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.YELLOW);
-                break;
+                return soul;
+            default:
+                soul = Instantiate(soulBluePrefab);
+                soul.GetComponent<SoulManager>().SetKind(SoulManager.SOUL_KIND.BLUE);
+                return soul;
         }
     }
 
@@ -172,12 +191,15 @@ public class GameManager : MonoBehaviour {
 
     // モノノケが全員集まった時の演出
     private void ClearEffect() {
-        //TODO:
         GameObject textClear = Instantiate(textClearPrefab);
         textClear.transform.SetParent(canvasGame.transform, false);
 
         Destroy(textClear, 5.0f);
 
         audioSource.PlayOneShot(clearSE);
+
+        // スコアUIを非表示にする
+        scoreBG.SetActive(false);
+        textScore.SetActive(false);
     }
 }
