@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 
 public class GameManager : MonoBehaviour {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour {
     public GameObject mononokeManager; // モノノケマネージャー
     public GameObject kaeru; // カエル
     public GameObject scoreBG; // スコア表示の背景UI
+    public GameObject textRestart; // リスタートテキスト
 
     public AudioClip getScoreSE; // 効果音：スコアゲット
     public AudioClip levelUpSE;  // 効果音：レベルアップ
@@ -203,11 +205,24 @@ public class GameManager : MonoBehaviour {
 
         audioSource.PlayOneShot(clearSE);
 
+        Invoke("textRestartDisplay", 5.0f);
+
         //// スコアUIを非表示にする
         //scoreBG.SetActive(false);
         //textScore.SetActive(false);
 
         // Twitterに投稿機能を呼ぶ
-        StartCoroutine(TweetWithScreenShot.TweetManager.TweetWithScreenShot("モノノケ全員集合！ @tendonjpn https://unityroom.com/games/takibi_mononoke"));
+        //StartCoroutine(TweetWithScreenShot.TweetManager.TweetWithScreenShot("モノノケ全員集合！ @tendonjpn https://unityroom.com/games/takibi_mononoke"));
+    }
+
+    // リスタートボタンが押された時
+    public void OnRestart() {
+        // シーンの最初から始める
+        SceneManager.LoadScene("GameScene");
+    }
+
+    // リスタートボタンを表示する
+    private void textRestartDisplay() {
+        textRestart.SetActive(true);
     }
 }
